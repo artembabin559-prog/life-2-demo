@@ -1,0 +1,6 @@
+html.intro-pending{overflow:hidden;background:#050a08}html.intro-pending .site-shell{visibility:hidden}
+.intro-overlay{position:fixed;inset:0;z-index:1000;background:#050a08;opacity:1;transition:opacity .5s ease;isolation:isolate}
+.intro-overlay.is-leaving{opacity:0;pointer-events:none}.intro-frame{display:block;width:100%;height:100%;border:0;background:#050a08}
+.intro-fallback{position:absolute;right:32px;top:25px;z-index:2;border:0;background:#050a08;color:#c9dfd1;font:16px Onest,sans-serif;padding:12px 0;cursor:pointer}.intro-fallback:focus-visible{outline:2px solid #a3e5ba;outline-offset:6px}.intro-fallback[hidden]{display:none}
+@media(max-width:700px){.intro-fallback{right:22px;top:18px;font-size:14px}}
+@media(prefers-reduced-motion:reduce){.intro-overlay{transition:none}}
