@@ -38,7 +38,7 @@
       overlay.setAttribute('aria-label','Вступление жИИзнь 2.0');
       frame=document.createElement('iframe');frame.className='intro-frame';
       frame.title='Интерактивное вступление жИИзнь 2.0';
-      frame.src='./intro.html?embedded=1';
+      frame.src='./intro.html?embedded=1&v=20261118b';
       fallback=document.createElement('button');fallback.className='intro-fallback';
       fallback.type='button';fallback.textContent='Сразу на сайт →';fallback.addEventListener('click',finish);
       window.addEventListener('message',onMessage);

@@ -7,6 +7,8 @@
   const embedded=window.parent!==window&&new URLSearchParams(location.search).get('embedded')==='1';
   function notifyParent(type){if(embedded)window.parent.postMessage({type},location.origin);}
   function openSite(){
+    if(siteOpened)return;
+    siteOpened=true;clearTimeout(exitTimer);cancelAnimationFrame(raf);raf=0;
     if(embedded)notifyParent('life-intro-exit');
     else location.assign('index.html?skip-intro=1');
   }
@@ -17,6 +19,7 @@
   let width=0,height=0,mobile=false,loaded=false,quiet=media.matches,phase='loading';
   let points=[],columns=[],portraits=[],flow=0,formation=0,exitTime=0;
   let raf=0,lastPaint=0,resizeTimer=0,touchTimer=0,gesture=null;
+  let exitTimer=0,exitStarted=0,exitDuration=0,siteOpened=false;
   const pointer={x:-1000,y:-1000,target:0,strength:0};
   const follow={x:0,y:0};
   const photo=new Image(),map=document.createElement('canvas');
@@ -146,7 +149,7 @@
   }
   function frame(now){
     raf=0;
-    if(!loaded||document.hidden)return;
+    if(!loaded||document.hidden||siteOpened)return;
     if(quiet&&phase!=='leaving'){draw();return;}
     if(now-lastPaint<1000/(mobile?30:45)){raf=requestAnimationFrame(frame);return;}
     const dt=Math.min((now-lastPaint)/1000,1);lastPaint=now;
@@ -154,8 +157,8 @@
     if(phase==='forming'&&formation>=6.6)setPhase('explore');
     if(phase==='explore'&&next.hidden&&formation>=7.4)next.hidden=false;
     if(phase==='leaving'){
-      exitTime+=dt;
-      if(exitTime>=(quiet?1.1:4.9)){openSite();return;}
+      exitTime=(now-exitStarted)/1000;
+      if(exitTime>=exitDuration){openSite();return;}
     }
     pointer.strength+=(pointer.target-pointer.strength)*Math.min(dt*8,1);
     const tx=pointer.target?(pointer.x/width-.5)*2:0,ty=pointer.target?(pointer.y/height-.5)*2:0;
@@ -163,12 +166,15 @@
     draw();raf=requestAnimationFrame(frame);
   }
   function start(){
-    if(raf||!loaded||document.hidden)return;
+    if(raf||!loaded||document.hidden||siteOpened)return;
     lastPaint=performance.now();raf=requestAnimationFrame(frame);
   }
   function enter(){
     if(phase!=='explore')return;
     setPhase('leaving');exitTime=0;closing.hidden=false;
+    exitStarted=performance.now();exitDuration=quiet?1.1:4.15;
+    // Navigation must complete even when the browser pauses canvas frames.
+    exitTimer=setTimeout(openSite,exitDuration*1000);
     status.textContent='жИИзнь 2.0. Открываем сайт.';
     draw();start();
   }
@@ -204,9 +210,9 @@
   document.addEventListener('visibilitychange',()=>{
     if(document.hidden){cancelAnimationFrame(raf);raf=0;}else start();
   });
-  window.addEventListener('pagehide',()=>{cancelAnimationFrame(raf);raf=0;clearTimeout(touchTimer);clearTimeout(resizeTimer);});
+  window.addEventListener('pagehide',()=>{cancelAnimationFrame(raf);raf=0;clearTimeout(exitTimer);clearTimeout(touchTimer);clearTimeout(resizeTimer);});
   window.addEventListener('pageshow',event=>{
-    if(event.persisted&&loaded){exitTime=0;formation=7;closing.hidden=true;setPhase('explore');draw();start();}
+    if(event.persisted&&loaded){siteOpened=false;exitTime=0;formation=7;closing.hidden=true;setPhase('explore');draw();start();}
   });
   function fail(){
     cancelAnimationFrame(raf);raf=0;loaded=false;setPhase('error');
