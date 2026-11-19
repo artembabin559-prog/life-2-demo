@@ -1,0 +1,91 @@
+/* The optional light landing uses the same markup and interactive components. */
+:root {
+  --paper: #f4f1e9;
+  --ink: #121313;
+  --yellow: #f4ff71;
+  --muted: #666962;
+  --line: #1213131f;
+  --card: #fbfaf6;
+  --recess: #ebe7de;
+  --on-ink: #f8f6ef;
+}
+* { scrollbar-color: #95978d var(--paper); }
+body { background: var(--paper); }
+:focus-visible, .codex-art:focus-visible, .join-section :focus-visible {
+  outline-color: var(--ink);
+}
+.site-header {
+  background: var(--card);
+  box-shadow: 0 0 0 1px var(--line), 0 4px 18px #12131308;
+}
+.hero-panel { background: var(--card); box-shadow: inset 0 0 0 1px var(--line); }
+.wordmark-version { background: linear-gradient(transparent 70%, var(--yellow) 70%); }
+.start-stamp, .week-outcome, .advanced { background: var(--recess); color: var(--ink); }
+.start-stamp dt { color: var(--muted); }
+.start-stamp > div:last-child { border-color: var(--line); }
+.hero-description, .hero-promise { color: var(--muted); }
+.button-blue { background: var(--ink); color: var(--on-ink); }
+.button-blue:hover { background: var(--yellow); color: var(--ink); }
+.button-outline { background: var(--card); border-color: var(--line); }
+.button-outline:hover { background: var(--recess); }
+
+.task-section, .recognition-section, .skills-section, .results-section,
+.balance-section, .bonuses-section, #for-you, .join-section {
+  background: var(--paper);
+  color: var(--ink);
+}
+.task-section, .recognition-section, .balance-section, .bonuses-section {
+  background: var(--recess);
+}
+.beginner-section, #program, .site-footer { background: var(--card); }
+.audience-item, .audience-item:nth-child(2), .audience-item:nth-child(5),
+.recognition-grid article, .outcome-card, .agents-bonus, .support-aside,
+.task-preview, .codex-gift, .enrollment-offer {
+  background: var(--card);
+  color: var(--ink);
+  border-color: var(--line);
+}
+.audience-item, .recognition-grid article, .support-aside, .task-preview,
+.enrollment-offer { box-shadow: inset 0 0 0 1px var(--line); }
+.support-aside { background: var(--paper); }
+.recognition-check, .outcome-check, .week-toggle, .gift-condition {
+  background: var(--yellow);
+  color: var(--ink);
+}
+.task-grid dt, .outcome-card h3, .support-aside h3, .agents-bonus h3,
+.task-preview-label { color: var(--ink); }
+.task-section .section-heading > p, .bonuses-section .section-heading > p,
+.results-section .section-heading > p, .balance-section .section-heading > p,
+.task-grid dd, .outcomes-intro, .outcomes-note, .outcome-card p, .result-item > p,
+.audience-item:nth-child(2) > p, .audience-item:nth-child(5) > p, .support-aside p,
+.balance-intro, .balance-outro, .wheel-caption, .selection-status, .agents-bonus p {
+  color: var(--muted);
+}
+.task-grid > div, .results-section .section-heading, .area-option { border-color: var(--line); }
+.photo-slot, .audience-item:nth-child(2) .photo-slot, .audience-item:nth-child(5) .photo-slot {
+  background: var(--recess);
+  color: var(--muted);
+}
+.photo-number, .audience-item:nth-child(2) .photo-number, .audience-item:nth-child(5) .photo-number {
+  color: #c9c7bd;
+}
+
+.balance-wheel g path { fill: var(--card); }
+.balance-wheel g:nth-child(even) path { fill: #dedcd2; }
+.balance-wheel g:hover path { fill: #d4d6bf; }
+.balance-wheel g.active path { fill: var(--yellow); }
+.balance-wheel g text, .balance-wheel .wheel-center-title { fill: var(--ink); }
+.balance-wheel .wheel-center { fill: var(--card); stroke: var(--line); }
+.balance-wheel .wheel-count { fill: var(--muted); }
+.area-check { background: var(--card); border-color: #898c82; }
+.area-option input:checked ~ .area-check { border-color: var(--ink); }
+.area-option input:checked ~ .area-name, .task-preview ul { color: var(--ink); }
+.area-option input:focus-visible ~ .area-check, .program-route a:focus-visible { outline-color: var(--ink); }
+.area-option.is-unavailable { color: var(--muted); }
+
+.program-route, .offer-payment { background: var(--recess); color: var(--ink); }
+.program-route a > span, .offer-pro > span, .offer-old-price { color: var(--muted); }
+.program-route svg, .offer-price { color: var(--ink); }
+.program-route li + li, .offer-pro { border-color: var(--line); }
+.program-route a:hover { background: var(--yellow); }
+.enrollment-button:disabled { background: #d8d6cc; color: #50534d; }
