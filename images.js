@@ -12,9 +12,18 @@ window.LIFE_IMAGES = {
   'format-agents': null,
   'format-chat': null,
   'format-demo': null,
-  'bonus-ask': null,
-  'bonus-masterclass': null,
-  'bonus-pro': null,
+  'bonus-ask': {
+    src: 'bonus-ask.webp',
+    alt: 'Команда /ask-vladimir подбирает скилл для вашей задачи'
+  },
+  'bonus-masterclass': {
+    src: 'bonus-masterclass.webp',
+    alt: 'Первый сайт и Telegram-бот со статусом «Готово»'
+  },
+  'bonus-pro': {
+    src: 'bonus-pro.webp',
+    alt: 'Месяц доступа к материалам и сообществу «Нейротворцы PRO»'
+  },
   'case-01': {
     src: 'ai-logos.webp',
     alt: 'Парящие логотипы ChatGPT, Claude, Gemini, Perplexity, DeepSeek, Midjourney, Grok и Copilot'
