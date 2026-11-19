@@ -78,6 +78,31 @@
   });
 
   const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
+  // The requested mascot only moves while its card is visible. The mascot
+  // itself is the keyboard/touch control, without an extra visible toolbar.
+  const gift=document.getElementById('codex-gift');
+  if(gift){
+    const control=gift.querySelector('.codex-art');
+    let giftVisible=false;
+    let giftPaused=false;
+    function updateGift(){
+      const moving=giftVisible&&!document.hidden&&!giftPaused&&!reducedMotion.matches;
+      gift.classList.toggle('is-walking',moving);
+      control.disabled=reducedMotion.matches;
+      const label=giftPaused?'Возобновить движение маскота Codex':'Приостановить движение маскота Codex';
+      control.setAttribute('aria-label',label);
+      control.title=label;
+    }
+    const giftObserver=new IntersectionObserver(entries=>{
+      giftVisible=entries[0].isIntersecting;
+      updateGift();
+    },{threshold:.2});
+    giftObserver.observe(gift);
+    control.addEventListener('click',()=>{giftPaused=!giftPaused;updateGift();});
+    document.addEventListener('visibilitychange',updateGift);
+    reducedMotion.addEventListener('change',updateGift);
+    updateGift();
+  }
   let entrance;
   function playEntrance(){
     if(!window.gsap||reducedMotion.matches)return;

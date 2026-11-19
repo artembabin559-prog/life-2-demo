@@ -1,0 +1,44 @@
+/* Three blocks explicitly matched to the owner's Incubator reference.
+   Keep the existing font assets and readable body size. */
+.recognition-section{background:var(--paper);color:var(--ink);padding-block:64px}
+.recognition-section h2{margin-bottom:32px}
+.recognition-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.recognition-grid article{display:flex;align-items:flex-start;gap:16px;padding:28px;background:#fff;border-radius:14px;min-width:0}
+.recognition-check{display:grid;place-items:center;flex:0 0 26px;width:26px;height:26px;margin-top:2px;background:var(--yellow);border-radius:50%}
+.recognition-check svg{width:20px;height:20px;stroke-width:2.3}
+.recognition-grid h3{font:700 21px/1.3 var(--body);letter-spacing:-.02em;text-wrap:pretty;margin-bottom:10px}
+.recognition-grid p{font-size:17px;line-height:1.55;color:var(--muted)}
+.skills-section{padding-block:88px;background:var(--ink);color:var(--paper)}
+.skills-section h2{text-align:center;max-width:26ch;margin-inline:auto}
+.outcomes-intro{text-align:center;max-width:64ch;margin:24px auto 0;font-size:18px;color:#cfcdc2}
+.outcome-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 20px;margin-top:56px}
+.outcome-card{position:relative;text-align:center;padding:40px 32px 28px;border:1px solid #33332f;background:#030303;min-width:0}
+.outcome-check{position:absolute;left:calc(50% - 18px);top:-18px;display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:#fff;color:var(--ink)}
+.outcome-check svg{width:24px;height:24px;stroke-width:2.4}
+.outcome-card h3{font:700 22px/1.25 var(--display);text-transform:uppercase;color:var(--yellow);letter-spacing:-.025em;max-width:29ch;margin:0 auto 18px}
+.outcome-card p{font-size:17px;line-height:1.6;color:#d0cec2;max-width:48ch;margin-inline:auto}
+.outcomes-note{text-align:center;font-size:18px;line-height:1.6;color:#cfcdc2;max-width:67ch;margin:32px auto 0}
+.bonuses-layout{display:block}
+.agents-bonus{display:grid;grid-template-columns:1.1fr 1fr;gap:18px 64px;padding:0}
+.agents-bonus h3{grid-row:1/3;margin:0}
+.agents-bonus p+p{margin:0}
+.codex-gift{width:min(960px,100%);margin:44px auto 0;padding:34px;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:30px;align-items:center;border:2px solid var(--yellow);border-radius:18px;background:var(--paper);color:var(--ink)}
+.gift-condition{display:inline-block;margin-bottom:18px;padding:10px 13px;background:var(--yellow);font:700 14px/1.35 var(--display);text-transform:uppercase;letter-spacing:-.02em}
+.gift-copy h3{font:700 clamp(28px,3vw,40px)/1.12 var(--display);text-transform:uppercase;letter-spacing:-.03em;margin:0 0 16px}
+.gift-product{display:flex;align-items:center;gap:15px}
+.gift-product img{width:54px;height:54px;object-fit:contain;flex:0 0 54px}
+.gift-product h4{font:700 22px/1.3 var(--display);letter-spacing:-.025em}
+.codex-art{--mascot-width:125px;position:relative;display:block;height:195px;width:100%;min-width:0;overflow:hidden;border:0;padding:0;background:transparent;color:var(--ink);border-radius:8px;cursor:pointer}
+.codex-art:focus-visible{outline:3px solid #956200;outline-offset:4px}
+.codex-track{position:absolute;inset:0 var(--mascot-width) 0 0}
+.codex-traveler{position:absolute;inset:0;animation:codex-patrol 7s ease-in-out infinite paused}
+.codex-mascot{position:absolute;bottom:2px;left:0;width:var(--mascot-width);height:145px;max-width:none;object-fit:contain;animation:codex-step .75s ease-in-out infinite paused;pointer-events:none}
+.codex-gift.is-walking .codex-traveler,.codex-gift.is-walking .codex-mascot{animation-play-state:running}
+@keyframes codex-patrol{0%,8%,100%{transform:translateX(0)}45%,55%{transform:translateX(100%)}}
+@keyframes codex-step{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-12px) rotate(3deg)}}
+@media(max-width:1050px){.agents-bonus{gap:18px 40px}.codex-gift{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:24px;padding:30px}.gift-copy h3{font-size:30px}.gift-product h4{font-size:20px}}
+@media(max-width:800px){.skills-section{padding-block:64px}.skills-section h2{font-size:36px}.outcome-card{padding:36px 24px 24px}.outcome-card h3{font-size:20px}.agents-bonus{display:block}.agents-bonus h3{margin-bottom:24px}.agents-bonus p+p{margin-top:18px}.codex-gift{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);padding:28px;gap:20px}.gift-condition{font-size:13px}.gift-copy h3{font-size:28px}.gift-product h4{font-size:19px}.gift-product img{width:46px;height:46px;flex-basis:46px}.codex-art{height:170px}}
+@media(max-width:700px){.recognition-grid{grid-template-columns:1fr}.recognition-grid article{padding:24px}.outcome-grid{grid-template-columns:1fr;gap:36px}.outcome-card{padding:38px 26px 28px}.outcome-card h3{max-width:30ch}.codex-gift{grid-template-columns:1fr;padding:26px 22px;gap:12px;max-width:520px}.gift-copy h3{font-size:30px}.gift-product h4{font-size:20px}.codex-art{height:150px;max-width:360px;justify-self:center}}
+@media(max-width:600px){.recognition-section{padding-block:48px}.recognition-section h2{font-size:28px;line-height:1.22}.recognition-grid article{padding:24px 22px;gap:14px}.recognition-grid h3{font-size:20px}.recognition-grid p{font-size:17px}.skills-section{padding-block:56px}.skills-section h2{font-size:28px;line-height:1.22}.outcomes-intro{font-size:17px;margin-top:20px}.outcome-grid{margin-top:46px}.outcome-card h3{font-size:21px}.outcomes-note{font-size:17px;margin-top:28px}.codex-gift{margin-top:32px}.gift-condition{font-size:13px;padding:10px 11px}.gift-copy h3{font-size:28px}.gift-product h4{font-size:19px}.gift-product{gap:12px}}
+@media(max-width:380px){.recognition-section h2,.skills-section h2{font-size:25px}.recognition-grid article{padding:22px 18px;gap:12px}.outcome-card{padding:36px 20px 24px}.outcome-card h3{font-size:20px}.codex-gift{padding:24px 18px}.gift-condition{font:700 14px/1.4 var(--body);padding:9px 10px;letter-spacing:0}.gift-copy h3{font-size:23px}.gift-product h4{font-size:17px}.gift-product img{width:38px;height:38px;flex-basis:38px}.codex-art{--mascot-width:115px;height:140px}.codex-mascot{height:130px}}
+@media(prefers-reduced-motion:reduce){.codex-gift .codex-traveler,.codex-gift .codex-mascot{animation:none!important}.codex-traveler{transform:translateX(50%)}.codex-art{cursor:default}}
