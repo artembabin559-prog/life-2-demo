@@ -116,7 +116,9 @@
 .footer-links a { text-decoration:underline; }
 @media(max-width:1000px){
   .format-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
-  .bonus-cards { grid-template-columns:minmax(0,1fr); }
+  .bonus-cards { display:flex; flex-wrap:wrap; justify-content:center; align-items:flex-start; }
+  .bonus-card { flex:0 1 336px; }
+  .bonus-visual { height:auto; aspect-ratio:5/3; }
   .fit-panel { grid-template-columns:minmax(0,1fr); }
   .fit-panel .button { max-width:320px; }
 }
@@ -126,7 +128,7 @@
   .format-copy { grid-template-rows:auto auto auto; gap:18px; }
   .format-copy .card-no { font-size:72px; }
   .format-card h3 { margin:0; font-size:22px; }
-  .bonus-card { padding:22px; }
+  .bonus-card { padding:18px; gap:14px; }
   .bonus-card h3 { font-size:21px; }
   .schedule { gap:0; }
   .offer-wrap { padding:22px 16px; }
