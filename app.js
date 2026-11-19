@@ -6,7 +6,7 @@
   menuButton.addEventListener('click',()=>{const open=menuButton.getAttribute('aria-expanded')==='true';menuButton.setAttribute('aria-expanded',String(!open));menuButton.setAttribute('aria-label',open?'Открыть меню':'Закрыть меню');mobileNav.hidden=open;});
   mobileNav.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu));
   document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!mobileNav.hidden){closeMenu();menuButton.focus();}});
-  const desktopMedia=matchMedia('(min-width:961px)');
+  const desktopMedia=matchMedia('(min-width:801px)');
   desktopMedia.addEventListener('change',event=>{if(event.matches)closeMenu();});
 
   function revealWeekFromHash(){
