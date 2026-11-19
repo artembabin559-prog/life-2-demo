@@ -26,6 +26,7 @@
 .formats-section { background:var(--paper); }
 .numbered-card { border-color:var(--line); background:#fff; }
 .card-no { display:block; font:700 22px/1 var(--display); margin-bottom:24px; }
+.video-illustration { pointer-events:none; user-select:none; -webkit-touch-callout:none; }
 .live-clip { width:100%; display:block; background:#111; border-radius:6px; margin-top:20px; aspect-ratio:16/9; }
 .bonus-cards { grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr)); }
 .bonus-cards .numbered-card { background:#191a15; color:var(--paper); border-color:#33342b; }
