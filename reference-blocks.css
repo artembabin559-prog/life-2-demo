@@ -18,11 +18,17 @@
 .outcome-card h3{font:700 22px/1.25 var(--display);text-transform:uppercase;color:var(--yellow);letter-spacing:-.025em;max-width:29ch;margin:0 auto 18px}
 .outcome-card p{font-size:17px;line-height:1.6;color:#d0cec2;max-width:48ch;margin-inline:auto}
 .outcomes-note{text-align:center;font-size:18px;line-height:1.6;color:#cfcdc2;max-width:67ch;margin:32px auto 0}
-.bonuses-layout{display:block}
-.agents-bonus{display:grid;grid-template-columns:1.1fr 1fr;gap:18px 64px;padding:0}
-.agents-bonus h3{grid-row:1/3;margin:0}
-.agents-bonus p+p{margin:0}
-.codex-gift{width:min(960px,100%);margin:44px auto 0;padding:34px;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:30px;align-items:center;border:2px solid var(--yellow);border-radius:18px;background:var(--paper);color:var(--ink)}
+.advanced{display:grid;grid-template-columns:max-content minmax(0,1fr);align-items:baseline;gap:24px;cursor:default}
+.advanced h3{font:700 19px/1.4 var(--body);letter-spacing:-.02em;text-wrap:nowrap}
+.advanced p{font-size:17px;line-height:1.6}
+.bonuses-section .section-heading{display:block;width:min(960px,100%);margin:0 auto 32px}
+.bonuses-section .section-heading>p{max-width:none;margin-top:20px;padding:0;color:#cfcdc2}
+.agents-bonus{width:min(960px,100%);margin-inline:auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:32px;padding:34px;border:1px solid #383930;border-radius:14px;background:#171812}
+.agents-bonus h3{margin:0;font-size:28px;line-height:1.3;color:var(--yellow)}
+.agents-bonus-copy{min-width:0}
+.agents-bonus p{font-size:17px;line-height:1.65}
+.agents-bonus p+p{margin-top:18px}
+.codex-gift{width:min(960px,100%);margin:24px auto 0;padding:34px;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:30px;align-items:center;border:2px solid var(--yellow);border-radius:18px;background:var(--paper);color:var(--ink)}
 .gift-condition{display:inline-block;margin-bottom:18px;padding:10px 13px;background:var(--yellow);font:700 14px/1.35 var(--display);text-transform:uppercase;letter-spacing:-.02em}
 .gift-copy h3{font:700 clamp(28px,3vw,40px)/1.12 var(--display);text-transform:uppercase;letter-spacing:-.03em;margin:0 0 16px}
 .gift-product{display:flex;align-items:center;gap:15px}
@@ -42,3 +48,7 @@
 @media(max-width:600px){.recognition-section{padding-block:48px}.recognition-section h2{font-size:28px;line-height:1.22}.recognition-grid article{padding:24px 22px;gap:14px}.recognition-grid h3{font-size:20px}.recognition-grid p{font-size:17px}.skills-section{padding-block:56px}.skills-section h2{font-size:28px;line-height:1.22}.outcomes-intro{font-size:17px;margin-top:20px}.outcome-grid{margin-top:46px}.outcome-card h3{font-size:21px}.outcomes-note{font-size:17px;margin-top:28px}.codex-gift{margin-top:32px}.gift-condition{font-size:13px;padding:10px 11px}.gift-copy h3{font-size:28px}.gift-product h4{font-size:19px}.gift-product{gap:12px}}
 @media(max-width:380px){.recognition-section h2,.skills-section h2{font-size:25px}.recognition-grid article{padding:22px 18px;gap:12px}.outcome-card{padding:36px 20px 24px}.outcome-card h3{font-size:20px}.codex-gift{padding:24px 18px}.gift-condition{font:700 14px/1.4 var(--body);padding:9px 10px;letter-spacing:0}.gift-copy h3{font-size:23px}.gift-product h4{font-size:17px}.gift-product img{width:38px;height:38px;flex-basis:38px}.codex-art{--mascot-width:115px;height:140px}.codex-mascot{height:130px}}
 @media(prefers-reduced-motion:reduce){.codex-gift .codex-traveler,.codex-gift .codex-mascot{animation:none!important}.codex-traveler{transform:translateX(50%)}.codex-art{cursor:default}}
+@media(max-width:800px){.advanced{grid-template-columns:1fr;gap:10px}.agents-bonus{padding:28px}.agents-bonus h3{font-size:26px;margin-bottom:20px}}
+@media(max-width:700px){.agents-bonus{max-width:520px;padding:26px 22px}.bonuses-section .section-heading{max-width:520px}.codex-gift{margin-top:24px}}
+@media(max-width:600px){.advanced{padding:24px}.bonuses-section .section-heading>p{font-size:17px;margin-top:16px}.agents-bonus h3{font-size:24px}.agents-bonus p{font-size:17px}}
+@media(max-width:380px){.advanced{padding:22px}.agents-bonus{padding:24px 18px}.agents-bonus h3{font-size:22px}}
