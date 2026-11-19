@@ -68,11 +68,6 @@
   sectors.forEach((sector,i)=>sector.addEventListener('click',()=>toggleArea(i)));
   renderSelection(false);
 
-  const enrollment=document.getElementById('enroll-notice');
-  function showEnrollment(){const isPro=document.querySelector('input[name="tariff"]:checked').value==='pro';enrollment.hidden=false;enrollment.textContent=`Вы выбрали ${isPro?'тариф для участников PRO — 15 000 ₽':'общий тариф — 20 000 ₽'}. Это демо-версия: запись и оплата пока не подключены. Заявка не отправлена.`;}
-  document.getElementById('enroll-button').addEventListener('click',showEnrollment);
-  document.querySelectorAll('input[name="tariff"]').forEach(input=>input.addEventListener('change',()=>{if(!enrollment.hidden)showEnrollment();}));
-
   document.querySelectorAll('[data-image-slot]').forEach(slot=>{
     const record=window.LIFE_IMAGES?.[slot.dataset.imageSlot];
     if(!record?.src)return;
