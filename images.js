@@ -1,5 +1,20 @@
 // Add a local image path and a meaningful description for each slot.
 window.LIFE_IMAGES = {
+  'threads-draft': null,
+  'threads-approval': null,
+  'threads-post': null,
+  'voice-transcript': null,
+  'voice-week': null,
+  'slides-notes': null,
+  'slides-editor': null,
+  'lms-lesson': null,
+  'format-coworking': null,
+  'format-agents': null,
+  'format-chat': null,
+  'format-demo': null,
+  'bonus-ask': null,
+  'bonus-masterclass': null,
+  'bonus-pro': null,
   'case-01': {
     src: 'ai-logos.webp',
     alt: 'Парящие логотипы ChatGPT, Claude, Gemini, Perplexity, DeepSeek, Midjourney, Grok и Copilot'
