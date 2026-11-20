@@ -8,11 +8,27 @@
 .result-visual:has(.has-image) .photo-number,
 .result-visual:has(.has-image) figcaption { display:none; }
 
-.motives { list-style:none; margin:28px 0 0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:0 36px; }
-.motives li { display:flex; align-items:baseline; gap:12px; border-top:1px solid var(--line); padding:18px 0; }
-.motives li>span { flex:none; font-size:18px; }
-.motives p { font-size:17px; line-height:1.55; }
-#for-you.compact-audience { margin-top:0; padding-block:56px; }
+#for-you.compact-audience { margin-top:0; padding-block:clamp(36px,5vw,64px); }
+.motives {
+  display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px;
+  list-style:none; margin:28px 0 0; padding:0;
+}
+.motives li {
+  background:#fff; color:var(--ink); border-radius:14px;
+  padding:clamp(20px,2vw,28px);
+}
+.motives li:nth-child(even) { background:var(--ink); color:#fff; }
+.motive-icon { display:block; font:28px/1.2 "Segoe UI Emoji","Apple Color Emoji",sans-serif; margin-bottom:16px; }
+.motives p { font:400 17px/1.5 var(--body); color:var(--muted); }
+.motives li:nth-child(even) p { color:#d6d5cf; }
+.motives strong {
+  display:block; margin-bottom:12px; color:var(--ink);
+  font:700 clamp(20px,1.65vw,23px)/1.25 var(--body); letter-spacing:-.018em;
+}
+.motives li:nth-child(even) strong { color:#fff; }
+@media (min-width:701px) and (max-width:1023px) {
+  .motives { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
 .compact-audience h2 { font-size:clamp(25px,2.4vw,34px); text-transform:none; letter-spacing:-.025em; }
 .compact-audience + .beginner-section {
   background:white; border-top:1px solid var(--line); border-bottom:1px solid var(--line);
