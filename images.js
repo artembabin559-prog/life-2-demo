@@ -7,10 +7,22 @@ window.LIFE_IMAGES = {
   'voice-week': null,
   'slides-notes': null,
   'slides-editor': null,
-  'lms-lesson': null,
-  'format-coworking': null,
-  'format-agents': null,
-  'format-chat': null,
+  'lms-lesson': {
+    src: 'format-practice.png',
+    alt: 'Кадр видеоурока: Владимир показывает, как приложить изображения к запросу в Codex'
+  },
+  'format-coworking': {
+    src: 'format-coworking.png',
+    alt: 'На онлайн-встрече участники вместе рассматривают фотографию на общем экране'
+  },
+  'format-agents': {
+    src: 'format-agents.jpeg',
+    alt: 'Группа человекоподобных роботов в цехе'
+  },
+  'format-chat': {
+    src: 'format-chat.png',
+    alt: 'Аватар чата с надписью «жИИзнь 2.0»'
+  },
   'format-demo': null,
   'bonus-ask': {
     src: 'bonus-ask.webp',
