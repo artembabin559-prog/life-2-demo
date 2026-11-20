@@ -17,13 +17,15 @@
   background:#fff; color:var(--ink); border-radius:14px;
   padding:clamp(20px,2vw,28px);
 }
-.motives li:nth-child(even) { background:#e7e3da; }
+.motives li:nth-child(even) { background:var(--ink); color:#fff; }
 .motive-icon { display:block; font:28px/1.2 "Segoe UI Emoji","Apple Color Emoji",sans-serif; margin-bottom:16px; }
 .motives p { font:400 17px/1.5 var(--body); color:var(--muted); }
+.motives li:nth-child(even) p { color:#d6d5cf; }
 .motives strong {
   display:block; margin-bottom:12px; color:var(--ink);
   font:700 clamp(20px,1.65vw,23px)/1.25 var(--body); letter-spacing:-.018em;
 }
+.motives li:nth-child(even) strong { color:#fff; }
 @media (min-width:701px) and (max-width:1023px) {
   .motives { grid-template-columns:repeat(2,minmax(0,1fr)); }
 }
@@ -90,7 +92,8 @@
 .author-layout ul { padding-left:1.2em; }
 .intensive-payment { padding-block:35px; background:#050505; color:#090909; }
 .offer-wrap {
-  display:grid; grid-template-columns:minmax(0,1fr); gap:25px; max-width:650px;
+  display:grid; grid-template-columns:minmax(0,.86fr) minmax(420px,.82fr);
+  align-items:center; gap:25px; max-width:1188px;
   padding:28px; border-radius:20px; background:#f3f3ef;
 }
 .offer-film { aspect-ratio:16/9; overflow:hidden; border-radius:14px; background:#050505; }
@@ -137,6 +140,7 @@
 .footer-links { display:flex; flex-wrap:wrap; gap:12px 22px; }
 .footer-links a { text-decoration:underline; }
 @media(max-width:1000px){
+  .offer-wrap { grid-template-columns:minmax(0,1fr); max-width:650px; }
   .format-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
   .bonus-cards { display:flex; flex-wrap:wrap; justify-content:center; align-items:flex-start; }
   .bonus-card { flex:0 1 336px; }
