@@ -100,6 +100,14 @@
 .capacity strong { display:block; margin-bottom:12px; font-size:14px; }
 .seat-bar { display:grid; grid-template-columns:repeat(50,minmax(0,1fr)); gap:3px; height:12px; }
 .seat-bar span { border-radius:1px; background:#d6d3c9; }
+.seat-bar .seat-filled { background:#050505; }
+@media (prefers-reduced-motion:no-preference){
+  .seat-bar .seat-filled { transform:scaleY(1.08); }
+  .seat-bar.is-pending .seat-filled { background:#d6d3c9; transform:none; }
+  .seat-bar.is-revealed .seat-filled {
+    transition:background-color .2s ease var(--delay),transform .2s ease var(--delay);
+  }
+}
 .bot-note { margin:0 auto; font-size:13px; line-height:1.45; color:#555; text-align:center; }
 .bot-note a { color:#050505; font-weight:800; text-decoration:underline; }
 .fit-section { background:#fff; padding:10px 0 40px; }

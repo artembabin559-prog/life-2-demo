@@ -78,6 +78,17 @@
   });
 
   const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
+  const seatBar = document.querySelector('.capacity .seat-bar');
+  if (seatBar && 'IntersectionObserver' in window) {
+    seatBar.classList.add('is-pending');
+    const observer = new IntersectionObserver(entries => {
+      if (entries.some(entry => entry.isIntersecting)) {
+        seatBar.classList.replace('is-pending', 'is-revealed');
+        observer.disconnect();
+      }
+    });
+    observer.observe(seatBar);
+  }
   // The requested mascot only moves while its card is visible. The mascot
   // itself is the keyboard/touch control, without an extra visible toolbar.
   const gift=document.getElementById('codex-gift');
