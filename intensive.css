@@ -17,15 +17,13 @@
   background:#fff; color:var(--ink); border-radius:14px;
   padding:clamp(20px,2vw,28px);
 }
-.motives li:nth-child(even) { background:var(--ink); color:#fff; }
+.motives li:nth-child(even) { background:#e7e3da; }
 .motive-icon { display:block; font:28px/1.2 "Segoe UI Emoji","Apple Color Emoji",sans-serif; margin-bottom:16px; }
 .motives p { font:400 17px/1.5 var(--body); color:var(--muted); }
-.motives li:nth-child(even) p { color:#d6d5cf; }
 .motives strong {
   display:block; margin-bottom:12px; color:var(--ink);
   font:700 clamp(20px,1.65vw,23px)/1.25 var(--body); letter-spacing:-.018em;
 }
-.motives li:nth-child(even) strong { color:#fff; }
 @media (min-width:701px) and (max-width:1023px) {
   .motives { grid-template-columns:repeat(2,minmax(0,1fr)); }
 }
