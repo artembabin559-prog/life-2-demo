@@ -1,12 +1,5 @@
-.result-frames {
-  position:absolute; inset:0; display:flex; overflow:hidden; border-radius:inherit;
-}
-.result-frames > div { position:relative; min-width:0; flex:1; }
-.result-frames > div:not(.has-image) { display:none; }
-.result-frames img { object-fit:contain; }
-.result-visual:has(.has-image) { background:#23241f; }
-.result-visual:has(.has-image) .photo-number,
-.result-visual:has(.has-image) figcaption { display:none; }
+.result-item .result-visual { aspect-ratio:16/9; align-self:start; }
+.result-item .result-visual img { object-fit:contain; }
 
 #for-you.compact-audience { margin-top:0; padding-block:clamp(36px,5vw,64px); }
 .motives {

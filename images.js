@@ -1,12 +1,17 @@
 // Add a local image path and a meaningful description for each slot.
 window.LIFE_IMAGES = {
-  'threads-draft': null,
-  'threads-approval': null,
-  'threads-post': null,
-  'voice-transcript': null,
-  'voice-week': null,
-  'slides-notes': null,
-  'slides-editor': null,
+  'task-threads': {
+    src: 'task-threads.webp',
+    alt: 'Черновик поста «Маршрут на выходные» в Telegram и публикация с той же обложкой в Threads.'
+  },
+  'task-week': {
+    src: 'task-week.webp',
+    alt: 'Голосовое сообщение и план на три дня: забрать заказ, сходить к врачу и в бассейн.'
+  },
+  'task-slides': {
+    src: 'task-slides.webp',
+    alt: 'Из заметок и фотографии кофе собраны слайды. В редакторе выделен заголовок «Идея кофейни».'
+  },
   'lms-lesson': {
     src: 'format-practice.png',
     alt: 'Кадр видеоурока: Владимир показывает, как приложить изображения к запросу в Codex'
