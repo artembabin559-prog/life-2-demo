@@ -23,7 +23,11 @@ window.LIFE_IMAGES = {
     src: 'format-chat.png',
     alt: 'Аватар чата с надписью «жИИзнь 2.0»'
   },
-  'format-demo': null,
+  'format-demo': {
+    src: 'format-demo.png',
+    alt: 'График публикаций в Telegram по дням: 72 публикации и 53 309 просмотров',
+    position: 'center top'
+  },
   'bonus-ask': {
     src: 'bonus-ask.webp',
     alt: 'Команда /ask-vladimir подбирает скилл для вашей задачи'
